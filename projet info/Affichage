@@ -1,0 +1,118 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <windows.h>
+
+
+//Placer le curseur
+void gotoligcol( int lig, int col )
+{
+// ressources
+COORD mycoord;
+
+mycoord.X = col;
+mycoord.Y = lig;
+SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), mycoord );
+}
+
+//changer la couleur
+void Color(int couleurDuTexte,int couleurDeFond) // fonction d'affichage de couleurs
+{
+    HANDLE H=GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(H,couleurDeFond*16+couleurDuTexte);
+}
+
+//affichage plateau
+void afficher_Plateau()
+{
+  //Haut du plateau
+  printf("Plateau de jeu :\n\n");
+    int i,j,k,ii;
+  printf("    ");
+  for(k=1;k<10;k++)
+  {
+      printf("%d   ",k);
+  }
+  printf("\n  %c",0xC9);
+  for(k=0;k<8;k++)
+  {
+      printf("   %c",0xCB);
+  }
+  printf("   %c",0xBB);
+  //milieu du plateau
+
+    for(i=0;i<8;i++)
+  {
+      ii=i;
+      printf("\n%c\n  %c",ii+'a',0xCC);
+      for(j=0;j<8;j++)
+      {
+          printf("   %c",0xCE);
+      }
+      printf("   %c",0xB9,ii+'a');
+  }
+  printf("\n%c",'i');
+  //fin du plateau
+  printf("\n  %c",0xC8);
+  for(i=0;i<8;i++)
+  {
+      printf("   %c",0xCA);
+  }
+  printf("   %c",0xBC);
+  printf("\n");
+  printf("    ");
+  for(k=1;k<10;k++)
+  {
+      printf("%d   ",k);
+  }
+}
+
+//effacer l'ancien pion puis afficher le nouveau
+void affichage_pion(int lig,int col)
+{
+    int x,y;
+    x=4+(lig -'a')*2;
+    y=1+2*col;
+    gotoligcol(x,y);
+    printf("@");
+}
+
+int nombre_joueur()
+{
+    int nbj;
+    printf("\n\n\n\nChoisir le nombre de joueurs:\n\n- 2 JOUEURS\n\n- 4 JOUEURS\n");
+    do scanf("%d",&nbj);
+        while ((nbj!=2)&&(nbj!=4));
+    return nbj;
+}
+
+int menu_joueur()
+{
+
+}
+//void convertligcol(int)
+//{
+    //int lettre,chiffre;
+    //printf("entrez la colonne et la ligne de la case :\n")
+
+//}
+
+
+
+int main()
+{
+    afficher_Plateau();
+    gotoligcol(20,20);
+    int nbj;
+
+    nbj=nombre_joueur();
+    printf("Partie a %d joueurs",nbj);
+    char p;
+    p=0x12;
+    int r;
+    int t;
+    r='c';
+    t=8;
+
+
+    return 0;
+}
