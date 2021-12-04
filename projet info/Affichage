@@ -67,13 +67,22 @@ void afficher_Plateau()
 }
 
 //effacer l'ancien pion puis afficher le nouveau
-void affichage_pion(int lig,int col)
+void affichage_pion(int lig, int col)
 {
     int x,y;
     x=4+(lig -'a')*2;
-    y=1+2*col;
+    y=4*col;
     gotoligcol(x,y);
     printf("@");
+}
+
+void affichage_barriere(int lig, int col)
+{
+    int x,y;
+    x=5+(lig -'a')*2;
+    y=(4*col)-1;
+    gotoligcol(x,y);
+    printf("---");
 }
 
 int nombre_joueur()
@@ -103,16 +112,19 @@ int main()
     afficher_Plateau();
     gotoligcol(20,20);
     int nbj;
-
     nbj=nombre_joueur();
     printf("Partie a %d joueurs",nbj);
     char p;
     p=0x12;
-    int r;
-    int t;
-    r='c';
-    t=8;
-
-
+    int l='g';
+    int c;
+    do
+    {printf("\n\nSaisir la colonne :\n");
+    scanf("%d",&c);
+     if((c<1)||(c>9))
+        printf("\nErreur ! La numerotation des colonnes va de 1 a 9\nRecommencer");
+    }while((c<1)||(c>9));
+    affichage_pion(l, c);
+    scanf("%d",&nbj);
     return 0;
 }
