@@ -16,7 +16,7 @@ do {scanf("%d",x);
 while ((x<=1)||(x>9));                  //blindage saisie colonne
 
 
-printf("selectionnez une colonne");
+printf("selectionnez une ligne");
 
 do {scanf("%c",y);
 }
@@ -34,7 +34,7 @@ if (distance>2){
     bouge(int tab[17][17], t_joueur tour_de );}
 
 if (distance==2){                                      // on teste si on enjambe bien un joueur et si deplacement possible
-    if ((joueur_entre(nombre_de_joueurs)==1)&&(barrière_bloque(tabn[17][17])==0)&&(joueur_sur_case()==0)){
+    if ((joueur_entre(nombre_de_joueurs)==1)&&(barriÃ¨re_bloque(tabn[17][17])==0)&&(joueur_sur_case()==0)){
        tabn_l[17][17]=tabn[17][17];                    //on sauvegarde le tour n-1
        tabn[x][y-48]=tabn[lastx][lasty];               //on sauvegarde ce tour
         tabn[lastx][lasty]=0;
@@ -45,7 +45,7 @@ if (distance==2){                                      // on teste si on enjambe
     }
     }
 if (distance==1){                                         //on teste si deplacement possible
-    if ((barrière_bloque(tabn[17][17])==0)&&(joueur_sur_case(tabn[17][17])==0)){
+    if ((barriÃ¨re_bloque(tabn[17][17])==0)&&(joueur_sur_case(tabn[17][17])==0)){
        tabn_l[17][17]=tabn[17][17];                       //on sauvegarde le tour n-1
        tabn[x][y-48]=tabn[lastx][lasty];                  //on sauvegarde ce tour
         tabn[lastx][lasty]=0;
