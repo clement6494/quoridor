@@ -1,0 +1,51 @@
+void Notice()
+{
+    int quitter;
+    printf("\n\n AIDE :\n\n ");
+
+    printf("PRINCIPE DU JEU : \n\n");
+    printf("Le 1er joueur qui commencera la partie sera tire au hasard.");
+    printf("Il placera son pion sur une case de la 1ere ligne du plateau");
+    printf("situee devant lui. Puis ce sera au joueur suivant de placer son pion et ainsi de suite");
+    printf("(s ils sont quatre joueurs.)");
+
+    printf("\n\n ACTIONS :\n\n");
+    printf("Chaque joueur choisit, a tour de role, de :\n\n");
+    printf("- Deplacer son pion d'une case, verticalement ou horizontalement, en avant ou en arriere;\n");
+    printf("- Poser une de ses barrieres entre deux blocs de cases : verticalement ou horizontalement;\n");
+    printf("- Passer son tour;\n");
+    printf("- Annuler le coup du joueur. Cette option permet d’annuler uniquement la derniere action faite ");
+    printf("sur le plateau.");
+
+    printf("\n\n REGLES :");
+
+    printf("\n\n SE DEPLACER :\n\n");
+    printf("Un deplacement ne se fera entre deux cases que si aucune barriere n est presente entre elles.\n");
+    printf("Si le deplacement est possible alors le pion change de case, sinon, le joueur rejoue.\n");
+    printf("Si deux pions sont l un en face de l autre et leur case n est pas separee par une barriere. ");
+    printf("du joueur passe au-dessus de son adversaire et prend la prochaine case vide. Cette derniere ");
+    printf("est situee dans la meme direction si aucune barriere n est placee apres le pion survole sinon ");
+    printf("le joueur pourra bifurquer a gauche ou a droite selon son choix et selon les eventuelles barrieres presentent");
+    printf("\nDans le cas ou la partie se fait avec 4 joueurs, il n est pas possible de sauter plus d un pion a la fois.");
+    printf("\nEn cas de blocage de la partie : Il n y aucun gagnant.");
+
+    printf("\n\n POSER UNE BARRIERE :\n\n");
+    printf("Ceci est possible tant que le joueur a encore des barrieres dans sa zone de reserve.");
+    printf("\nLe but de la barriere est de creer son propre chemin ou de ralentir un adversaire. Dans ce");
+    printf("dernier cas, il est interdit de fermer totalement l acces a la ligne de but de son(ses) adversaire(s).");
+
+    printf("\n\n ANNULER LE COUP PRECEDENT :\n\n");
+    printf("Il n y a qu une seule annulation possible en cas de demande.");
+
+    printf("\n\n CALCUL DES SCORES :\n\n");
+    printf("Chaque partie rapporte au gagnant 5 points. En cas de blocage, aucun point n est attribue.");
+
+    printf("\n\n MATERIEL:\n\n");
+    printf(" 1 plateau de jeu de 9x9 cases\n");
+    printf(" 4 pions\n");
+    printf(" 20 barrieres\n");
+    /*printf("POUR QUITTER APPUYER SUR 0.");
+    scanf("%d",&quitter);
+    if((quitter==0))*/
+    return 0;
+}
