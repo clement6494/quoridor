@@ -1,0 +1,26 @@
+# depslib dependency file v1.0
+1638645717 source:d:\users\edsiot\documents\projet info\projet info 1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"header_function.h"
+	<windows.h>
+	<time.h>
+	<string.h>
+
+1638627531 d:\users\edsiot\documents\projet info\projet info 1\header_fonctions.h
+
+1638645717 d:\users\edsiot\documents\projet info\projet info 1\header_function.h
+
+1638645825 source:c:\users\cleco\onedrive\documents\projet info 1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"header_function.h"
+	<windows.h>
+	<time.h>
+	<string.h>
+
+1638875474 c:\users\cleco\onedrive\documents\projet info 1\header_function.h
+	"header_struct.h"
+
+1638875836 c:\users\cleco\onedrive\documents\projet info 1\header_struct.h
+

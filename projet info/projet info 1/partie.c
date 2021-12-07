@@ -1,19 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main()
-{
-    printf("Hello world!\n");
-    return 0;
+#include "header_function.h"
+
+
+void greeting(){
+printf("bienvenue nouveau joueur");
 }
 
-
-void partie(int tab[17][17]));
-
-int partie(int tab[17][17]){
+void partie(int tab[17][17]){
+    int tour=0;
+    int fin_partie=1;
+    int action;
 
     while (fin_partie!== 0){
-        debut_tour();
+        action=debut_tour(tour);
         if action==1;
             pose();
         if action==2;
@@ -22,21 +23,17 @@ int partie(int tab[17][17]){
             annule();
         if action==4;
             passe();
-        if action==5;
-            sauvegarder_et_quitter();
-        if action==6;
-            quitter();
         tour+=1;
         test_fin_partie();
 }
 
 }
 
-void affichage(tab[17]{17});
-int debut_tour(int d);
+
 
 int debut_tour(int d){
 t_joueur tour_de;
+int action;
     if d%2==0;
         tour_de= joueur1;
     if d%2==1;
@@ -54,7 +51,9 @@ t_joueur tour_de;
     }
 return (action);
 }
-
-
-
-
+/*Il faut coder ttes les fonctions
+coder*
+pose()
+annule()
+bouge()
+test_fin_partie()*/
