@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "header_fct.h"
-#include "header_struct.h"
+#include "header_function.h"
 #include <windows.h>
 #include <time.h>
 #include<string.h>
@@ -19,7 +18,6 @@ int main()
         }
 
     }
-    //greeting();
+    greeting();
     return 0;
 }
-

@@ -22,14 +22,14 @@ void pose()
     clear_entete_bas();
     decale_axes();
 
-    printf("selectionnez la premiere colonne, *s", tour_de->nom);
+    printf("selectionnez la premiere colonne *s", tour_de.nom);
     scanf("%d",x1);
     while ((x1<=1)||(x1>8))
     {
         scanf("%d",x1);
     }
 
-    printf("selectionnez la premiere ligne, *s", tour_de->nom);
+    printf("selectionnez la premiere ligne *s", tour_de.nom);
     scanf("%c",yc1);
     while ((yc1<A)||((yc1>H)&&(yc1<a))||(yc1>h))
     {
@@ -38,14 +38,14 @@ void pose()
 
     do
     {
-        printf("selectionnez la seconde colonne, *s", tour_de->nom);
+        printf("selectionnez la seconde colonne *s", tour_de.nom);
         scanf("%d",x);
         while ((x2<=1)||(x2>8))
         {
             scanf("%d",x);
         }
 
-        printf("selectionnez la seconde ligne, *s", tour_de->nom);
+        printf("selectionnez la seconde ligne *s", tour_de.nom);
         scanf("%c",yc2);
         while ((yc2<A)||((yc2>H)&&(yc2<a))||(yc2>h))
         {
@@ -98,7 +98,7 @@ void pose()
             for (i=0; i<nombre_de_joueurs; i++)
             {
 
-                test_pose=test_chemin_possible(tab_pose,joueur[i]);
+                test_pose=test_chemin_possible(tab_pose[17][17],i);
             }
             if test_pose=1
         {
@@ -110,8 +110,7 @@ void pose()
                     }
                     tab[y1*2-1][x1*2-1]=1;                //on pose le mur
                     tab[y2*2-1][x2*2-1]=1;
-                    recale_axes();
-                    tour_de->murs_dispo-=1                           // on replace les axes
+                    recale_axes();                            // on replace les axes
                 }
             }
             else
@@ -126,91 +125,5 @@ void pose()
 }
 
 
-int test_chemin_possible(int tab[17][17],t_joueur player)
-{
-    /** on va compter le nombre de deplacements effectues par le bot, si il fait 81 deplacements (le nombres de cases sur le plateau )
-    alors on pose l'hypothese qu'il n'y a pas d'issus (faux mathematiquement mais tres peu probable)*/
-    int tours=0;
 
-    t_joueur bot=player;
-
-    int x0,y0;  //position de depart pour voir si fini partie
-    x0= bot->depart_x;
-    y0= bot->depart_y;
-
-    int x,y;    //on initialise la position du bot
-    x= bot->lastx;
-    y= bot->lasty;
-
-    int bot_success=0; //variable test si le bot fini le jeu
-    int i,j;
-    int gauche=0,droite=0,haut=0,bas=0;
-    while ((tours<=81)||(bot_success==1))
-    {
-        //on cherche d'abord a atteindre une extremité du plateau
-        for (i=(x-1)*2; i>=2; i-=2) //cherche extremité gauche
-        {
-            if tab[i]==1
-            {
-                gauche=1;
-            }
-        }
-        if (gauche==0)
-        {
-            x=1;
-        }
-        else
-        {
-            for (i=(x-1)*2; i<=8; i+=2) //cherche extremité droite
-            {
-                if tab[i]==1
-                {
-                    droite=1;
-                }
-            }
-            if (droite==0)
-            {
-                x=9;
-            }
-            else
-            {
-                for (i=(y-1)*2; i<=2; i-=2) //cherche extremité haut
-                {
-                    if tab[i]==1
-                    {
-                        haut=1;
-                    }
-                }
-                if (haut==0)
-                {
-                    y=1;
-                }
-                else
-                {
-                    for (i=(y-1)*2; i<=8; i+=2) //cherche extremité bas
-                    {
-                        if tab[i]==1
-                        {
-                            bas=1;
-                        }
-                    }
-                    if (bas==0)
-                    {
-                        y=9;
-                    }
-                }
-            }
-        }
-
-        //si on peu pas algo de traversee de labyrinthe en longeant le mur a gauche.
-
-
-
-
-
-        tours+=1;
-    }
-
-    return 0;
-}
 

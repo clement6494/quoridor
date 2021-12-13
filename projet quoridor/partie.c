@@ -39,23 +39,23 @@ int debut_tour(int d)
     t_joueur tour_de;
     int action;
     if d%2==0;
-tour_de= joueur[1];
+tour_de= joueur1;
 if d%2==1;
-tour_de= joueur[2];
+tour_de= joueur2;
 
 affiche_msg_tour(tour_de.nom);
     scanf(("%d",&action);
-          if (tour_de->barriere==0)
+          if (tour_de.barriere==0)
 {
     while ((action>1)&&(action<=6))
-        { printf("erreur");
+        {
             scanf("%d",&action);
         }
     }
     else
     {
         while ((action>=1)&&(action<=6))
-        {   printf("erreur");
+        {
             scanf("%d",&action);
         }
     }
